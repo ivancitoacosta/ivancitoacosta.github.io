@@ -80,9 +80,12 @@ section {
 }
 
 .contacto form {
+    max-width: 600px;
+    margin-left: 2rem; /* o el valor que quieras */
+    margin-right: auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 1rem;
     background-color: white;
     padding: 20px;
     border-radius: 5px;
