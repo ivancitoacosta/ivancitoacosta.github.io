@@ -4,24 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Si tienes un archivo CSS -->
+    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS externo -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Fuente -->
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background: #0078D7;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background: #005A9E;
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 2rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        section h2 {
+            color: #0078D7;
+            border-bottom: 2px solid #0078D7;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        .proyectos, .habilidades {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .proyecto, .habilidad {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 5px;
+            flex: 1 1 calc(33.333% - 1rem);
+            box-sizing: border-box;
+        }
+        .proyecto img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .contacto form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contacto input, .contacto textarea {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .contacto button {
+            background: #0078D7;
+            color: #fff;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contacto button:hover {
+            background: #005A9E;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Bienvenido a mi Portafolio</h1>
+        <h1>Iván Acosta - Portafolio</h1>
     </header>
+    <nav>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
     <main>
-        <section>
-            <h2>Proyectos</h2>
-            <p>inserte proyecto hecho por chat gpt.</p>
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>Escribe aquí una breve descripción sobre ti, tus intereses, experiencia y objetivos profesionales.</p>
         </section>
-        <section>
-            <h2>Sobre mí:</h2>
-            <p>fan de cuties.</p>
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+            <div class="proyectos">
+                <div class="proyecto">
+                    <img src="proyecto1.jpg" alt="Proyecto 1">
+                    <h3>Proyecto 1</h3>
+                    <p>Descripción breve del proyecto.</p>
+                </div>
+                <div class="proyecto">
+                    <img src="proyecto2.jpg" alt="Proyecto 2">
+                    <h3>Proyecto 2</h3>
+                    <p>Descripción breve del proyecto.</p>
+                </div>
+                <div class="proyecto">
+                    <img src="proyecto3.jpg" alt="Proyecto 3">
+                    <h3>Proyecto 3</h3>
+                    <p>Descripción breve del proyecto.</p>
+                </div>
+            </div>
+        </section>
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <div class="habilidades">
+                <div class="habilidad">
+                    <h3>Habilidad 1</h3>
+                    <p>Descripción breve de la habilidad.</p>
+                </div>
+                <div class="habilidad">
+                    <h3>Habilidad 2</h3>
+                    <p>Descripción breve de la habilidad.</p>
+                </div>
+                <div class="habilidad">
+                    <h3>Habilidad 3</h3>
+                    <p>Descripción breve de la habilidad.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Si deseas contactarme, completa el siguiente formulario:</p>
+            <form>
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
+                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 ivancito marca registrada</p>
+        <p>&copy; 2025 Iván Acosta. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
