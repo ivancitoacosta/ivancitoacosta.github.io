@@ -30,7 +30,12 @@
 
         header nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header nav .nav-links {
+            display: flex;
             align-items: center;
         }
 
@@ -44,17 +49,6 @@
 
         header nav a:hover {
             color: #DCEFFF;
-        }
-
-        /* Ajuste de posición de los enlaces del menú */
-        header nav div:last-child {
-            margin-left: -45px; /* Ajusta este valor para mover más a la izquierda */
-        }
-
-        /* Si quieres permitir ajustes más finos */
-        header nav div:last-child {
-            position: relative;
-            left: -45px; /* Cambia este valor para mover más a la izquierda o derecha */
         }
 
         /* Hero Section */
@@ -266,8 +260,8 @@
 <body>
     <header>
         <nav>
-            <div>Fourthlayer</div>
-            <div>
+            <div class="nav-links">
+                <a href="#hero" class="brand">Fourthlayer</a>
                 <a href="#hero">Home</a>
                 <a href="#sobre-mi">About Me</a>
                 <a href="#proyectos">Projects</a>
