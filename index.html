@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iván Acosta - Portafolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -30,20 +29,21 @@
 
         header nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
         }
 
         header nav .nav-links {
             display: flex;
             align-items: center;
+            margin-left: 2rem;
         }
 
         header nav a {
             color: white;
             text-decoration: none;
-            margin: 0 1rem;
+            margin: 0 0.5rem;
             font-weight: bold;
             transition: color 0.3s ease;
         }
@@ -243,31 +243,6 @@
             text-decoration: underline;
         }
 
-        /* Responsivo */
-        @media (max-width: 768px) {
-            header nav {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            header nav .nav-links {
-                flex-direction: column;
-                margin: 1rem 0 0;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .habilidades, .proyectos-grid {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .proyecto {
-                width: 100%;
-            }
-        }
     </style>
 </head>
 <body>
