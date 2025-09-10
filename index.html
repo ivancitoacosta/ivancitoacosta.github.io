@@ -342,5 +342,21 @@
         <a href="#">GitHub</a>
         <a href="#">Twitter</a>
     </footer>
+    <script>
+        // Desplazamiento suave para los enlaces del menú
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('header nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Evita el comportamiento predeterminado
+                    const targetId = link.getAttribute('href').substring(1); // Obtiene el ID del destino
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
