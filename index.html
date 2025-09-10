@@ -247,6 +247,11 @@
             text-decoration: underline;
         }
 
+        /* Ajustar el desplazamiento para secciones con encabezado fijo, con esto puedo acomodar la parte que no se veia */ 
+        section {
+            scroll-margin-top: 40px; /* Ajusta este valor según la altura del header */
+        }
+
         /* Responsivo */
         @media (max-width: 768px) {
             header nav {
