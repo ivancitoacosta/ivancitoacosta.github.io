@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iván Acosta - Portafolio</title>
+    <title>Iván Acosta - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos generales */
+        /* General Styles */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -92,37 +92,37 @@
             background: #DCEFFF;
         }
 
-        /* Sobre mí */
-        .sobre-mi {
+        /* About Me */
+        .about-me {
             padding: 4rem 2rem;
             text-align: center;
         }
 
-        .sobre-mi img {
+        .about-me img {
             width: 200px;
             height: 200px;
             border-radius: 50%;
             margin-bottom: 1rem;
         }
 
-        .sobre-mi h2 {
+        .about-me h2 {
             color: #4A90E2;
             margin-bottom: 1rem;
         }
 
-        .sobre-mi p {
+        .about-me p {
             max-width: 600px;
             margin: 0 auto 2rem;
         }
 
-        .habilidades {
+        .skills {
             display: flex;
             justify-content: center;
             gap: 2rem;
             flex-wrap: wrap;
         }
 
-        .habilidad {
+        .skill {
             background: white;
             padding: 0.5rem;
             border-radius: 5px;
@@ -136,27 +136,27 @@
             font-size: 0.9rem;
         }
 
-        /* Proyectos */
-        .proyectos {
+        /* Projects */
+        .projects {
             padding: 4rem 2rem;
             background: #f0f4f8;
-            margin-bottom: 4rem; /* Incrementa este valor según sea necesario */
+            margin-bottom: 4rem; /* Increase this value as needed */
         }
 
-        .proyectos h2 {
+        .projects h2 {
             text-align: center;
             color: #4A90E2;
             margin-bottom: 2rem;
         }
 
-        .proyectos-grid {
+        .projects-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
             justify-content: center;
         }
 
-        .proyecto {
+        .project {
             background: white;
             padding: 1rem;
             border-radius: 5px;
@@ -165,14 +165,14 @@
             width: 300px;
         }
 
-        .proyecto img {
+        .project img {
             max-width: 100%;
             border-radius: 5px;
             margin-bottom: 1rem;
         }
 
-        .proyecto a,
-        .proyecto button {
+        .project a,
+        .project button {
             background: #4A90E2;
             color: white;
             border: none;
@@ -184,24 +184,24 @@
             display: inline-block;
         }
 
-        .proyecto a:hover,
-        .proyecto button:hover {
+        .project a:hover,
+        .project button:hover {
             background: #357ABD;
         }
 
-        /* Contacto */
-        .contacto {
+        /* Contact */
+        .contact {
             padding: 4rem 2rem;
             text-align: center;
-            margin-top: 14rem; /* Incrementa este valor según sea necesario */
+            margin-top: 14rem; /* Increase this value as needed */
         }
 
-        .contacto h2 {
+        .contact h2 {
             color: #4A90E2;
             margin-bottom: 2rem;
         }
 
-        .contacto form {
+        .contact form {
             max-width: 600px;
             margin: 0 auto;
             display: flex;
@@ -209,14 +209,14 @@
             gap: 1rem;
         }
 
-        .contacto input, .contacto textarea {
+        .contact input, .contact textarea {
             padding: 1rem;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1rem;
         }
 
-        .contacto button {
+        .contact button {
             background: #4A90E2;
             color: white;
             border: none;
@@ -227,7 +227,7 @@
             transition: background-color 0.3s ease;
         }
 
-        .contacto button:hover {
+        .contact button:hover {
             background: #357ABD;
         }
 
@@ -254,9 +254,9 @@
             text-decoration: underline;
         }
 
-        /* Ajustar el desplazamiento para secciones con encabezado fijo, con esto puedo acomodar la parte que no se veia */ 
+        /* Adjust scroll for sections with fixed header to reveal hidden content */
         section {
-            scroll-margin-top: 40px; /* Ajusta este valor según la altura del header */
+            scroll-margin-top: 40px; /* Adjust this value according to the header height */
         }
 
         /* Responsivo */
@@ -271,12 +271,12 @@
                 margin-left: 0;
             }
 
-            .habilidades, .proyectos-grid {
+            .skills, .projects-grid {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .proyecto {
+            .project {
                 width: 100%;
             }
         }
@@ -288,74 +288,74 @@
             <a href="#hero" class="brand">Fourthlayer</a>
             <div class="nav-links">
                 <a href="#hero">Home</a>
-                <a href="#sobre-mi">About Me</a>
-                <a href="#proyectos">Projects</a>
-                <a href="#contacto">Contact</a>
+                <a href="#about-me">About Me</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
             </div>
         </nav>
     </header>
     <section class="hero" id="hero">
         <h1>Hello, I'm Ivan Acosta</h1>
         <p>Multi-platform developer passionate about creating unique digital experiences.</p>
-        <button onclick="document.getElementById('proyectos').scrollIntoView({ behavior: 'smooth' })">View Projects</button>
+        <button onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">View Projects</button>
     </section>
-    <section class="sobre-mi" id="sobre-mi">
+    <section class="about-me" id="about-me">
         <img src="/images/foto_perfil5.jpg" alt="Iván Acosta">
-        <h2>Sobre mí</h2>
-        <p>Soy desarrollador independiente de videojuegos 2D con experiencia en Unity, especializado en el diseño y la creación de mecánicas innovadoras. Utilizo la inteligencia artificial como una herramienta clave para hacer posibles mis ideas y optimizar el proceso creativo. Me apasiona el diseño de videojuegos, la animación, la programación y todo lo relacionado con la creación de experiencias interactivas.</p>
-        <p>He desarrollado varios juegos 2D de forma independiente y mi objetivo es llevar mi trabajo al siguiente nivel, participando en proyectos más grandes y con mayor presupuesto, donde pueda seguir aprendiendo, aportar mi visión creativa y crecer profesionalmente en la industria.</p>
-        <div class="habilidades">
-            <div class="habilidad">GPT</div>
-            <div class="habilidad">GPT Image generative</div>
+        <h2>About Me</h2>
+        <p>I am an independent 2D game developer with experience in Unity, specializing in designing and creating innovative mechanics. I use artificial intelligence as a key tool to make my ideas possible and streamline the creative process. I am passionate about game design, animation, programming, and everything related to creating interactive experiences.</p>
+        <p>I have developed several 2D games independently and my goal is to take my work to the next level by participating in larger, higher-budget projects where I can continue learning, contribute my creative vision, and grow professionally in the industry.</p>
+        <div class="skills">
+            <div class="skill">GPT</div>
+            <div class="skill">GPT Image generative</div>
         </div>
     </section>
-    <section class="proyectos" id="proyectos">
-        <h2>Proyectos</h2>
-        <div class="proyectos-grid">
-            <div class="proyecto">
+    <section class="projects" id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project">
                 <img src="https://img.itch.zone/aW1nLzIwMTI5Mjg5LmpwZw==/original/Naaeoq.jpg" alt="Furrybets">
                 <h3>Furrybets</h3>
-                <p>Minijuegos de apuestas con temática furry.</p>
-                <a href="https://fourthlayer.itch.io/furrybets" target="_blank">Ver más</a>
+                <p>Furry-themed betting minigames.</p>
+                <a href="https://fourthlayer.itch.io/furrybets" target="_blank">See more</a>
             </div>
-            <div class="proyecto">
-                <img src="proyecto2.jpg" alt="Proyecto 2">
-                <h3>Proyecto 2</h3>
-                <p>Descripción breve del proyecto.</p>
-                <button>Ver más</button>
+            <div class="project">
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Brief project description.</p>
+                <button>See more</button>
             </div>
-            <div class="proyecto">
-                <img src="proyecto3.jpg" alt="Proyecto 3">
-                <h3>Proyecto 3</h3>
-                <p>Descripción breve del proyecto.</p>
-                <button>Ver más</button>
+            <div class="project">
+                <img src="project3.jpg" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>Brief project description.</p>
+                <button>See more</button>
             </div>
         </div>
     </section>
-    <section class="contacto" id="contacto">
-        <h2>Contacto</h2>
+    <section class="contact" id="contact">
+        <h2>Contact</h2>
         <form id="contact-form" action="https://formspree.io/f/mblawwyw" method="POST">
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
-            <input type="email" name="email" placeholder="Tu correo electrónico" required>
-            <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
-            <button type="submit">Enviar</button>
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+            <button type="submit">Send</button>
         </form>
         <p id="form-status"></p>
     </section>
     <footer>
-        <p>&copy; 2025 Iván Acosta. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Iván Acosta. All rights reserved.</p>
         <a href="#">LinkedIn</a>
         <a href="#">GitHub</a>
         <a href="#">Twitter</a>
     </footer>
     <script>
-        // Desplazamiento suave para los enlaces del menú
+        // Smooth scrolling for menu links
         document.addEventListener('DOMContentLoaded', () => {
             const navLinks = document.querySelectorAll('header nav a');
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
-                    e.preventDefault(); // Evita el comportamiento predeterminado
-                    const targetId = link.getAttribute('href').substring(1); // Obtiene el ID del destino
+                    e.preventDefault(); // Prevent default behavior
+                    const targetId = link.getAttribute('href').substring(1); // Get the target ID
                     const targetElement = document.getElementById(targetId);
                     if (targetElement) {
                         targetElement.scrollIntoView({ behavior: 'smooth' });
@@ -378,13 +378,13 @@
                             }
                         });
                         if (response.ok) {
-                            status.textContent = '¡Tu mensaje se ha enviado y pronto sera respondido, muchas gracias!';
+                            status.textContent = 'Your message has been sent and will be answered soon, thank you!';
                             form.reset();
                         } else {
-                            status.textContent = 'Oops! Hubo un problema al enviar tu mensaje.';
+                            status.textContent = 'Oops! There was a problem sending your message.';
                         }
                     } catch (error) {
-                        status.textContent = 'Oops! Hubo un problema al enviar tu mensaje.';
+                        status.textContent = 'Oops! There was a problem sending your message.';
                     }
                 });
             }
