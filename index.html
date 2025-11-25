@@ -1,393 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iván Acosta - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-        }
+    <title>Iván Acosta | Game Developer</title>
 
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #4A90E2;
-            color: white;
-            padding: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            box-sizing: border-box;
-        }
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
 
-        header nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        header nav .nav-links {
-            display: flex;
-            align-items: center;
-            margin-left: auto;
-            flex-wrap: wrap;
-        }
+    <!-- Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        header nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 0.5rem;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        header nav a:hover {
-            color: #DCEFFF;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, #4A90E2, #50E3C2);
-            color: white;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero button {
-            background: white;
-            color: #4A90E2;
-            border: none;
-            padding: 0.8rem 2rem;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .hero button:hover {
-            background: #DCEFFF;
-        }
-
-        /* About Me */
-        .about-me {
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-
-        .about-me img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-        }
-
-        .about-me h2 {
-            color: #4A90E2;
-            margin-bottom: 1rem;
-        }
-
-        .about-me p {
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .skills {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .skill {
-            background: white;
-            padding: 0.5rem;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 100px;
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-
-        /* Projects */
-        .projects {
-            padding: 10rem 2rem;
-            background: #f0f4f8;
-            margin-bottom: 4rem; /* Increase this value as needed */
-        }
-
-        .projects h2 {
-            text-align: center;
-            color: #4A90E2;
-            margin-bottom: 2rem;
-        }
-
-        .projects-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-        }
-
-        .project {
-            background: white;
-            padding: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 300px;
-        }
-
-        .project img {
-            max-width: 100%;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-        }
-
-        .project a,
-        .project button {
-            background: #4A90E2;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .project a:hover,
-        .project button:hover {
-            background: #357ABD;
-        }
-
-        /* Contact */
-        .contact {
-            padding: 10rem 2rem;
-            text-align: center;
-            margin-top: 4rem; /* Increase this value as needed */
-        }
-
-        .contact h2 {
-            color: #4A90E2;
-            margin-bottom: 2rem;
-        }
-
-        .contact form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact input, .contact textarea {
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .contact button {
-            background: #4A90E2;
-            color: white;
-            border: none;
-            padding: 1rem;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact button:hover {
-            background: #357ABD;
-        }
-
-        #form-status {
-            margin-top: 1rem;
-            font-weight: bold;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
-
-        footer a {
-            color: #4A90E2;
-            text-decoration: none;
-            margin: 0 0.5rem;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Adjust scroll for sections with fixed header to reveal hidden content */
-        section {
-            scroll-margin-top: 55px; /* Adjust this value according to the header height */
-        }
-
-        /* Responsivo */
-        @media (max-width: 768px) {
-            header nav {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            header nav .nav-links {
-                flex-direction: column;
-                margin-left: 0;
-            }
-
-            .skills, .projects-grid {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .project {
-                width: 100%;
-            }
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
-        <nav>
-            <a href="#hero" class="brand">Fourthlayer</a>
-            <div class="nav-links">
+        <div class="container">
+            <a href="#" class="logo">Iván<span class="text-gradient">Acosta</span></a>
+            <nav class="nav-links">
                 <a href="#hero">Home</a>
-                <a href="#about-me">About Me</a>
+                <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
+
     <section class="hero" id="hero">
-        <h1>Hello, I'm Ivan Acosta</h1>
-        <p>Multi-platform developer passionate about creating unique digital experiences.</p>
-        <button onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">View Projects</button>
-    </section>
-    <section class="about-me" id="about-me">
-        <img src="/images/foto_perfil5.jpg" alt="Iván Acosta">
-        <h2>About Me</h2>
-        <p>I am an independent 2D game developer with experience in Unity, specializing in designing and creating innovative mechanics. I use artificial intelligence as a key tool to make my ideas possible and streamline the creative process. I am passionate about game design, animation, programming, and everything related to creating interactive experiences.</p>
-        <p>I have developed several 2D games independently, and my goal is to create larger, higher-budget original projects by collaborating with other people. By combining my creative vision and technical expertise with teamwork, I strive to achieve more ambitious and engaging results.</p>
-        <div class="skills">
-            <div class="skill">GPT</div>
-            <div class="skill">GPT Image generative</div>
-        </div>
-    </section>
-    <section class="projects" id="projects">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-            <div class="project">
-                <img src="https://img.itch.zone/aW1nLzIwMTI5Mjg5LmpwZw==/original/Naaeoq.jpg" alt="Furrybets">
-                <h3>Furrybets</h3>
-                <p>Furry-themed betting minigames.</p>
-                <a href="https://fourthlayer.itch.io/furrybets" target="_blank">See more</a>
-            </div>
-            <div class="project">
-                <img src="https://img.itch.zone/aW1nLzIzMzI1MTA0LnBuZw==/508x254%23mb/oJbha4.png" alt="Zootherapy cover art">
-                <h3>Zootherapy</h3>
-                <p>Adult-oriented simulation where you run an exclusive massage parlor for adorable furry clients, tailoring every session to their needs.</p>
-                <a href="https://fourthlayer.itch.io/zootherapy" target="_blank" rel="noopener noreferrer">See more</a>
-            </div>
-            <div class="project">
-                <img src="project3.jpg" alt="Project 3">
-                <h3>Project 3</h3>
-                <p>Brief project description.</p>
-                <button>See more</button>
+        <div class="container hero-content" data-aos="fade-up">
+            <h1>Creating Unique <br><span class="text-gradient">Digital Experiences</span></h1>
+            <p>Independent Game Developer specializing in 2D mechanics, AI integration, and interactive storytelling.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Get in Touch</a>
             </div>
         </div>
     </section>
-    <section class="contact" id="contact">
-        <h2>Contact</h2>
-        <form id="contact-form" action="https://formspree.io/f/mblawwyw" method="POST">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="email" placeholder="Your email" required>
-            <textarea name="message" rows="5" placeholder="Your message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <p id="form-status"></p>
+
+    <section class="section-padding" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="/images/foto_perfil5.jpg" alt="Iván Acosta">
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <h2>About <span class="text-gradient">Me</span></h2>
+                    <p>I am an independent 2D game developer with experience in Unity, specializing in designing and
+                        creating innovative mechanics. I leverage artificial intelligence to streamline the creative
+                        process and bring complex ideas to life.</p>
+                    <p>My passion lies in game design, animation, and programming. While I've developed several titles
+                        independently, I aim to collaborate on larger, more ambitious projects that push the boundaries
+                        of interactive entertainment.</p>
+
+                    <div class="skills-container">
+                        <h3 class="skills-title">Technologies & Skills</h3>
+                        <div class="skills-tags">
+                            <span class="skill-tag"><i class="fab fa-unity"></i> Unity 2D</span>
+                            <span class="skill-tag"><i class="fas fa-code"></i> C#</span>
+                            <span class="skill-tag"><i class="fas fa-brain"></i> AI Integration</span>
+                            <span class="skill-tag"><i class="fas fa-gamepad"></i> Game Design</span>
+                            <span class="skill-tag"><i class="fas fa-robot"></i> Generative AI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <section class="section-padding projects" id="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Featured <span class="text-gradient">Projects</span></h2>
+                <p>A selection of my recent work in game development.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="https://img.itch.zone/aW1nLzIwMTI5Mjg5LmpwZw==/original/Naaeoq.jpg" alt="Furrybets">
+                    </div>
+                    <div class="project-content">
+                        <h3>Furrybets</h3>
+                        <p>A collection of engaging betting minigames with a unique theme. Features custom mechanics and
+                            addictive gameplay loops.</p>
+                        <a href="https://fourthlayer.itch.io/furrybets" target="_blank" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="https://img.itch.zone/aW1nLzIzMzI1MTA0LnBuZw==/508x254%23mb/oJbha4.png"
+                            alt="Zootherapy">
+                    </div>
+                    <div class="project-content">
+                        <h3>Zootherapy</h3>
+                        <p>An immersive simulation game where you manage a specialized clinic. Tailor sessions to client
+                            needs in this detailed management sim.</p>
+                        <a href="https://fourthlayer.itch.io/zootherapy" target="_blank" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="project3.jpg" alt="Project 3"
+                            onerror="this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=Coming+Soon'">
+                    </div>
+                    <div class="project-content">
+                        <h3>Upcoming Project</h3>
+                        <p>Currently in development. A new 2D platformer exploring unique movement mechanics and
+                            environmental storytelling.</p>
+                        <button class="btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Coming
+                            Soon</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Get In <span class="text-gradient">Touch</span></h2>
+                <p>Have a project in mind or want to collaborate? Send me a message.</p>
+            </div>
+
+            <div class="contact-container" data-aos="zoom-in">
+                <form id="contact-form" action="https://formspree.io/f/mblawwyw" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Your email"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" class="form-control"
+                            placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%">Send Message</button>
+                    <p id="form-status"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2025 Iván Acosta. All rights reserved.</p>
-        <a href="https://github.com/ivancitoacosta" target="_blank">GitHub</a>
-        <a href="https://x.com/_Fourthlayer_" target="_blank">Twitter</a>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/ivancitoacosta" target="_blank" class="social-icon" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://x.com/_Fourthlayer_" target="_blank" class="social-icon" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="mailto:contact@example.com" class="social-icon" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 Iván Acosta. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Smooth scrolling for menu links
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('header nav a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault(); // Prevent default behavior
-                    const targetId = link.getAttribute('href').substring(1); // Get the target ID
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
+        // Initialize Animate On Scroll
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
-
-            const form = document.getElementById('contact-form');
-            const status = document.getElementById('form-status');
-            if (form) {
-                form.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    const data = new FormData(form);
-                    try {
-                        const response = await fetch(form.action, {
-                            method: form.method,
-                            body: data,
-                            headers: {
-                                'Accept': 'application/json'
-                            }
-                        });
-                        if (response.ok) {
-                            status.textContent = 'Your message has been sent and will be answered soon, thank you!';
-                            form.reset();
-                        } else {
-                            status.textContent = 'Oops! There was a problem sending your message.';
-                        }
-                    } catch (error) {
-                        status.textContent = 'Oops! There was a problem sending your message.';
-                    }
-                });
-            }
         });
+
+        // Form Handling
+        const form = document.getElementById('contact-form');
+        const status = document.getElementById('form-status');
+
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const data = new FormData(form);
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.innerText;
+
+                submitBtn.innerText = 'Sending...';
+                submitBtn.disabled = true;
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: form.method,
+                        body: data,
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (response.ok) {
+                        status.innerHTML = '<span style="color: #4ade80">Message sent successfully!</span>';
+                        form.reset();
+                    } else {
+                        status.innerHTML = '<span style="color: #f87171">Oops! Something went wrong.</span>';
+                    }
+                } catch (error) {
+                    status.innerHTML = '<span style="color: #f87171">Oops! Connection error.</span>';
+                } finally {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+            });
+        }
     </script>
 </body>
+
 </html>
