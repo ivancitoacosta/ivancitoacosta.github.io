@@ -226,7 +226,8 @@
             </div>
 
             <div class="contact-container" data-aos="zoom-in">
-                <form id="contact-form" action="https://formspree.io/f/mblawwyw" method="POST">
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="8402d502-b9c0-47ad-bec7-13e725c5db83">
                     <div class="form-group">
                         <label for="name" data-i18n="contact.name">Name</label>
                         <input type="text" id="name" name="name" class="form-control" placeholder="Your name"
@@ -314,17 +315,21 @@
                         form.reset();
                     } else {
                         const result = await response.json().catch(() => null);
-                        const details = Array.isArray(result && result.errors)
-                            ? result.errors.map(error => error && error.message).filter(Boolean).join(' ')
-                            : '';
+                        const message = result && (
+                            result.message ||
+                            (result.body && result.body.message) ||
+                            result.error
+                        );
                         status.style.color = '#f87171';
-                        status.textContent = details || `${translations[currentLang].contact.error} (HTTP ${response.status})`;
-                        console.error('Formspree submission failed:', response.status, result);
+                        status.textContent = typeof message === 'string' && message
+                            ? message
+                            : `${translations[currentLang].contact.error} (HTTP ${response.status})`;
+                        console.error('Web3Forms submission failed:', response.status, result);
                     }
                 } catch (error) {
                     status.style.color = '#f87171';
                     status.textContent = translations[currentLang].contact.networkError;
-                    console.error('Could not reach Formspree:', error);
+                    console.error('Could not reach Web3Forms:', error);
                 } finally {
                     submitBtn.innerText = translations[currentLang].contact.send;
                     submitBtn.disabled = false;
